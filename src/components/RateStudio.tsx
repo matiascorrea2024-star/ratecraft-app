@@ -423,6 +423,20 @@ export function RateStudio({ initialPresetSlug }: RateStudioProps) {
                       </span>
                     </div>
                   </div>
+                  <details className="pt-1 text-[11px] text-ink-secondary">
+                    <summary className="cursor-pointer font-medium text-cobalt hover:underline select-none">
+                      How was my recommended price calculated?
+                    </summary>
+                    <div className="mt-2 p-2.5 rounded bg-subtle border border-hairline font-mono text-[10.5px] space-y-1 tabular-nums">
+                      <p>Base labor ({doc.inputs.estimatedHours}h × {formatCurrency(doc.inputs.hourlyBaseline, doc.currency)}): {formatCurrency(breakdown.naiveHourlyTotal, doc.currency)}</p>
+                      <p>+ Admin/call buffer ({doc.inputs.adminBufferPercent}%): {formatCurrency(breakdown.overheadCost, doc.currency)}</p>
+                      <p>× Complexity ({breakdown.complexityMultiplier}x) + Costs ({formatCurrency(breakdown.directExpenses, doc.currency)})</p>
+                      <p>+ Margin ({doc.inputs.desiredMarginPercent}%): {formatCurrency(breakdown.marginAmount, doc.currency)} × Value ({doc.inputs.valueMultiplier}x)</p>
+                      <p className="text-ink pt-1 border-t border-hairline font-sans text-[10px]">
+                        Combines cost-plus floor with value-tier anchoring; adjust inputs to match your market.
+                      </p>
+                    </div>
+                  </details>
                 </div>
 
                 {/* Editor Card */}
@@ -1068,7 +1082,7 @@ export function RateStudio({ initialPresetSlug }: RateStudioProps) {
                 {doc.providerName === "Northstar Digital Studio LLC" && (
                   <div className="px-3.5 py-2 rounded-md border border-hairline bg-subtle text-[11px] text-ink-secondary flex items-center justify-between gap-2">
                     <span>
-                      <strong className="text-ink font-mono">SAMPLE DATA:</strong> Replace Northstar / Acme details in the Studio tab before sending.
+                      <strong className="text-ink font-mono">SAMPLE PROPOSAL:</strong> Illustrative example figures, not a universal market quote. Enter your own project details.
                     </span>
                     <button
                       type="button"

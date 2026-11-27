@@ -127,7 +127,7 @@ export function HomeSections() {
               Simple Studio Passes
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl text-ink mt-2">
-              Free forever to calculate. One upgraded quote pays for years of Pro.
+              One professional proposal makes your next client conversation easier.
             </h2>
           </div>
 

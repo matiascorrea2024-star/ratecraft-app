@@ -123,7 +123,7 @@ export default async function RateDetailPage({ params }: PageProps) {
               </p>
               <div className="mt-5 flex flex-wrap gap-6 text-xs font-mono tabular-nums">
                 <div>
-                  <span className="block text-ink-muted uppercase text-[10px]">US Market Range</span>
+                  <span className="block text-ink-muted uppercase text-[10px]">Indicative US Range</span>
                   <span className="text-ink font-medium mt-0.5 block">{preset.usMarketRange}</span>
                 </div>
                 <div>
