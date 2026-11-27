@@ -273,22 +273,40 @@ export function RateStudio({ initialPresetSlug }: RateStudioProps) {
       />
 
       <main className="flex-1">
-        <section id="calculator" className="border-b border-hairline bg-canvas">
-          <div className="max-w-[1360px] mx-auto px-4 sm:px-6 pt-7 pb-10">
-            {/* Editorial Headline */}
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-5 pb-6 border-b border-hairline">
-              <div className="max-w-2xl">
-                <p className="font-mono text-[11px] uppercase tracking-widest text-cobalt font-medium">
-                  No-Signup Freelance Pricing &amp; 3-Tier Quote Studio
-                </p>
-                <h1 className="font-serif text-3xl sm:text-5xl text-ink tracking-tight leading-[1.08] mt-2">
-                  Stop guessing what to charge. Quote 3 tiers in 30 seconds.
-                </h1>
-                <p className="text-sm sm:text-base text-ink-secondary mt-2.5 leading-relaxed">
-                  Factor hidden admin overhead, complexity, and profit margin automatically—then export a client-ready US Letter 3-package proposal PDF.
-                </p>
+        {/* Executive Obsidian Hero Band */}
+        <section className="relative bg-[#090D16] text-white border-b border-white/10 overflow-hidden">
+          <div className="absolute inset-0 bg-grid-dark pointer-events-none" />
+          <div className="absolute inset-0 hero-glow-cobalt pointer-events-none" />
+          <div className="relative max-w-[1360px] mx-auto px-4 sm:px-6 py-9 sm:py-11 flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <p className="inline-flex items-center px-3 py-1 rounded-full bg-blue-500/15 border border-blue-400/30 font-mono text-[11px] uppercase tracking-widest text-blue-300 font-semibold">
+                No-Signup Freelance Pricing &amp; 3-Tier Quote Studio
+              </p>
+              <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-[-0.035em] leading-[1.05] mt-3">
+                Stop guessing what to charge. Quote 3 tiers in 30 seconds.
+              </h1>
+              <p className="text-sm sm:text-base text-slate-300 mt-3 leading-relaxed">
+                Factor hidden admin overhead, complexity, and profit margin automatically—then export a client-ready US Letter 3-package proposal PDF.
+              </p>
+              <div className="mt-5 flex flex-wrap items-center gap-2 text-[11px] font-mono text-slate-300">
+                <span className="px-2.5 py-1 rounded-md bg-white/[0.06] border border-white/10">
+                  <strong className="text-blue-300">01</strong> Enter Hours &amp; Margin
+                </span>
+                <span className="text-slate-500">→</span>
+                <span className="px-2.5 py-1 rounded-md bg-white/[0.06] border border-white/10">
+                  <strong className="text-blue-300">02</strong> Expose Hidden Gap
+                </span>
+                <span className="text-slate-500">→</span>
+                <span className="px-2.5 py-1 rounded-md bg-white/[0.06] border border-white/10">
+                  <strong className="text-blue-300">03</strong> Export 3-Tier PDF
+                </span>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section id="calculator" className="border-b border-hairline bg-canvas">
+          <div className="max-w-[1360px] mx-auto px-4 sm:px-6 pt-6 pb-14">
 
             {/* Quick Presets */}
             <div className="py-4 flex flex-wrap items-center justify-between gap-3">
@@ -373,14 +391,44 @@ export function RateStudio({ initialPresetSlug }: RateStudioProps) {
               </button>
             </div>
 
-            {/* Split Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-              {/* LEFT: Pricing Engine Inputs */}
-              <div
-                className={`lg:col-span-5 space-y-4 ${
-                  mobilePane === "editor" ? "block" : "hidden lg:block"
-                }`}
-              >
+            {/* Elevated Studio Workbench Shell */}
+            <div className="rounded-2xl bg-white border border-slate-200/90 shadow-[0_24px_70px_-24px_rgba(15,23,42,0.14)] overflow-hidden">
+              {/* Studio App Chrome Bar */}
+              <div className="px-5 py-3.5 bg-[#0F172A] text-white flex flex-wrap items-center justify-between gap-3 border-b border-white/10">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="hidden sm:flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-slate-600" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-slate-600" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-slate-600" />
+                  </div>
+                  <span className="font-mono text-xs text-slate-300 truncate">
+                    RateCraft Studio · {doc.quoteNumber}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2.5 shrink-0">
+                  <span className="px-2.5 py-1 rounded-full bg-blue-500/15 border border-blue-400/30 font-mono text-[11px] text-blue-300 font-semibold tabular-nums">
+                    +{formatCurrency(breakdown.hiddenUnderpricingGap, doc.currency)} recovered
+                  </span>
+                  <button
+                    type="button"
+                    onClick={handleDownloadPdf}
+                    className="hidden lg:inline-flex min-h-[38px] px-4 rounded-lg bg-blue-500 hover:bg-blue-400 text-white text-xs font-semibold items-center gap-1.5 transition-colors"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>Download Quote PDF</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Split Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 items-start">
+                {/* LEFT: Pricing Engine Inputs */}
+                <div
+                  className={`lg:col-span-5 p-4 sm:p-6 border-b lg:border-b-0 lg:border-r border-slate-200 space-y-4 ${
+                    mobilePane === "editor" ? "block" : "hidden lg:block"
+                  }`}
+                >
                 {/* Underpricing Gap Callout */}
                 <div className="bg-paper border border-hairline rounded-lg p-4 space-y-2">
                   <div className="flex items-center justify-between gap-2">
@@ -965,20 +1013,12 @@ export function RateStudio({ initialPresetSlug }: RateStudioProps) {
 
               {/* RIGHT: Sticky Live 3-Tier Quote Preview */}
               <div
-                className={`lg:col-span-7 lg:sticky lg:top-20 space-y-3 ${
+                className={`lg:col-span-7 bg-dots-light p-4 sm:p-6 space-y-3 ${
                   mobilePane === "preview" ? "block" : "hidden lg:block"
                 }`}
               >
-                <div className="bg-paper border border-hairline rounded-lg p-2 flex flex-wrap items-center justify-between gap-1.5 sm:gap-2">
+                <div className="bg-paper border border-hairline rounded-xl p-2 flex flex-wrap items-center justify-between gap-1.5 sm:gap-2 shadow-sm">
                   <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-                    <button
-                      type="button"
-                      onClick={handleDownloadPdf}
-                      className="hidden lg:inline-flex min-h-[44px] px-4 rounded-md bg-cobalt hover:bg-cobalt-hover text-white text-sm font-medium items-center gap-2 transition-colors"
-                    >
-                      <Download className="w-4 h-4" />
-                      <span>Download Quote PDF</span>
-                    </button>
                     <button
                       type="button"
                       onClick={handleShareSummary}
@@ -1254,6 +1294,7 @@ export function RateStudio({ initialPresetSlug }: RateStudioProps) {
                     </div>
                   </div>
                 </article>
+              </div>
               </div>
             </div>
           </div>
