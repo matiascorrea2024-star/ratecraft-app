@@ -32,6 +32,22 @@ export function Footer() {
           >
             ScopeCraft SOW Builder →
           </a>
+          <a
+            href="https://craftapp-hub.vercel.app/invoice-followup"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-ink"
+          >
+            InvoiceFollowUp
+          </a>
+          <a
+            href="https://craftapp-hub.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-ink"
+          >
+            CraftApp Hub
+          </a>
         </div>
       </div>
     </footer>
