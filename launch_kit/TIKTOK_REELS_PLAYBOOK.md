@@ -1,6 +1,6 @@
 # RateCraft TikTok, Reels & Shorts Viral Playbook
 
-**Bio CTA:** `https://ratecraft-app.vercel.app` (or CraftApp Studio Hub)
+**Bio CTA:** `https://craftapp-hub.vercel.app/?from=tiktok&tool=rate` (highlights RateCraft right at the top of the CraftApp Studio bio hub, with 1-tap handoff into ScopeCraft)
 
 1. **`01_underpricing_300_vs_1500_9x16.mp4` (1080x1920)**
    - **Hook:** *"If you're charging $300 for a website, you're leaving $1,200+ on the table."*
